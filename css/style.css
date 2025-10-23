@@ -1,6 +1,3 @@
-/* =========================
-   WARNA & GAYA DASAR
-========================= */
 :root {
   --bg: #ffffff;
   --panel: #f7fdf9;
@@ -23,26 +20,34 @@ body {
   padding-top: 70px;
 }
 
-/* =========================
-   NAVBAR
-========================= */
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 68px;
+  height: 70px;
   z-index: 200;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; 
   align-items: center;
-  gap: 40px;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
-  padding: 16px 0;
+  padding: 0 8%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-nav a {
+
+.nav-logo img {
+  height: 200px;      
+  width: auto;
+  transform: translateY(5px);
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;         
+}
+
+.nav-links a {
   position: relative;
   text-decoration: none;
   color: var(--text);
@@ -52,7 +57,7 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a::after {
+.nav-links a::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -64,19 +69,16 @@ nav a::after {
   transform: translateX(-50%);
 }
 
-nav a:hover,
-nav a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--accent);
 }
 
-nav a:hover::after,
-nav a.active::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
   width: 60%;
 }
 
-/* =========================
-   BUTTONS
-========================= */
 .btn-blue {
   background: var(--blue);
   color: #fff;
@@ -95,13 +97,10 @@ nav a.active::after {
   transform: translateY(-2px);
 }
 
-/* =========================
-   FOOTER
-========================= */
 footer {
   background: #222;
   color: #ddd;
-  padding: 6px 5%;           /* lebih kecil dari 10px */
+  padding: 6px 5%;       
 }
 
 .footer-container {
@@ -114,25 +113,25 @@ footer {
 }
 
 .footer-title {
-  font-size: 0.9rem;          /* diperkecil */
+  font-size: 0.9rem;         
   font-weight: 600;
   color: var(--accent);
   margin-bottom: 2px;
 }
 
 .footer-subtitle {
-  font-size: 0.7rem;          /* diperkecil */
+  font-size: 0.7rem;         
   opacity: 0.8;
 }
 
 .footer-contact {
-  font-size: 0.7rem;          /* diperkecil */
+  font-size: 0.7rem;         
   opacity: 0.85;
 }
 
 .footer-bottom {
   text-align: center;
-  font-size: 0.65rem;         /* diperkecil */
+  font-size: 0.65rem;        
   margin-top: 4px;
   padding-top: 2px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -140,16 +139,21 @@ footer {
 }
 
 
-/* =========================
-   ANIMASI FADE-IN
-========================= */
-.fade-in {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  transition: opacity 1s ease, transform 1s ease;
+#toTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: none;
 }
-
-.content, .card, .dest, .blog-card, .about-container {
-  opacity: 0;
-  transform: translateY(40px);
+#toTopBtn.show {
+  display: block;
 }
