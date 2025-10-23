@@ -1,0 +1,155 @@
+/* =========================
+   WARNA & GAYA DASAR
+========================= */
+:root {
+  --bg: #ffffff;
+  --panel: #f7fdf9;
+  --muted: #555555;
+  --accent: #A0C878;
+  --accent-light: #DDEB9D;
+  --blue: #1A73E8;
+  --text: #222222;
+}
+
+html { scroll-behavior: smooth; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: 70px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 68px;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 16px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 60%;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-blue {
+  background: var(--blue);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-blue:hover {
+  background: #145ac0;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: #222;
+  color: #ddd;
+  padding: 6px 5%;           /* lebih kecil dari 10px */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-title {
+  font-size: 0.9rem;          /* diperkecil */
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 2px;
+}
+
+.footer-subtitle {
+  font-size: 0.7rem;          /* diperkecil */
+  opacity: 0.8;
+}
+
+.footer-contact {
+  font-size: 0.7rem;          /* diperkecil */
+  opacity: 0.85;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.65rem;         /* diperkecil */
+  margin-top: 4px;
+  padding-top: 2px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 0.7;
+}
+
+
+/* =========================
+   ANIMASI FADE-IN
+========================= */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.content, .card, .dest, .blog-card, .about-container {
+  opacity: 0;
+  transform: translateY(40px);
+}
